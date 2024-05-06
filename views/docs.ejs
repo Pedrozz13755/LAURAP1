@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LAURA-API</title>
+    <meta name="description"content="uma api rest 100% profissional e confiável para os seus negócios, aqui você encontrará diversas apis de diferentes conteúdos."/>
+    <link rel="icon" href="https://telegra.ph/file/980cea6cb4f8e5a55a6ab.jpg" type="image/x-icon">
+
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Architects+Daughter|Bad+Script|Cookie|Courgette|Covered+By+Your+Grace|Dancing+Script|Gloria+Hallelujah|Great+Vibes|Handlee|Indie+Flower|Kaushan+Script|Pacifico|Patrick+Hand|Permanent+Marker|Sacramento|Satisfy|Shadows+Into+Light|Shadows+Into+Light+Two|Tangerine|Yellowtail"
+              rel="stylesheet"> 
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism.min.css">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" >
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/pink.css" id="theme-color">
+    <link rel="stylesheet" href="/css/cssaudio.css" />
+    <style>
+      .side-bar{
+    background: rgba(000,000,000 , 0.2);
+    backdrop-filter:blur(15px);
+    width: 290px;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: -100%;
+    overflow-y: auto;
+    transition: 0.5s ease;
+    transition-property: left;
+    z-index: 9999;
+  }
+
+  .side-bar.active{
+    left: 0;
+  }
+
+  .side-bar .menu{
+    width: 100%;
+    margin-top: 35px;
+    text-shadow: 7px 7px 7px black;
+  }
+
+  .side-bar .menu .item{
+    position:relative;
+    cursor:pointer;
+  }
+
+  .side-bar .menu .item a{
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 40px;
+  }
+
+  .side-bar .menu .item a:hover{
+    transition: 0.3s ease;
+
+  }
+
+  .side-bar .menu .item i{
+    margin-right: 10px;
+  }
+
+  .side-bar .menu .item a .dropdown{
+    background: rgba(000,000,000 , 0.0);
+    position: absolute;
+    right:0;
+    margin: 13px;
+    transition: 0.3s ;
+  }
+  .sub-btn{
+    text-shadow: 7px 7px 7px black;
+    background: rgba(000,000,000 , 0.0);
+  }
+  .side-bar .menu .item .sub-menu{
+    background: transparent;
+    display:none;
+    box-shadow: 0 0 5px white;
+
+  }
+
+  .side-bar .menu .item .sub-menu a{
+    padding-left: 80px;
+    box-shadow: 0 0 5px white;
+
+  }
+
+  .rotate{
+    transform: rotate(90deg);
+  }
+  .item{
+    box-shadow: 0 0 2px white;
+    border-radius: 9px;
+    margin: 5px;
+  }
+.menu-btn, .close-btn {
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  margin: 25px;
+  cursor: pointer;
+  z-index: 9999;
+  top: 50px; 
+}
+
+.menu-btn i, .close-btn i {
+  cursor: pointer;
+}
+
+  .fe img{
+    position: absolute;
+    width: 30px;
+    position: absolute;
+    margin: 15px;
+    margin-left: 90%;
+    border-radius: 50%;
+    box-shadow: 0 0 30px white;
+  }
+
+  h1{
+    text-align: center;
+
+    margin-top: 25px;
+  }
+
+  .ab i{
+    border-radius: 50%;
+    text-align: center;
+
+  }
+  .txt i {
+    text-align: center;
+
+    margin-top: 25px;
+    font-size: 25px;
+    margin-left: 25px;
+    right: 1px;
+
+  }
+  .tutotxt {
+    background-color: var(--color-dark3);
+    border-radius: 7px;  
+    margin: 24px;
+    box-shadow: 0 0 7px darkgray;
+
+    }
+  .fotos {
+    width: 90%;
+    border-radius: 7px;
+  }
+  .tutotxtt{
+
+    margin: 7px;
+    text-align: center;
+  }
+  .aaaa {
+
+    margin: 5px;
+  }
+
+  .pedrozz{
+  color: black;
+  }
+  .pedrozz2{
+  color: #000000;
+
+  }
+  .pedrozz3{
+  color: #000000;
+
+  }
+     .center-image {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .center-image img {
+      border-radius: 100%;
+      width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+      height: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+     }
+  </style>
+    <audio autoplay="autoplay" hidden="hidden" src="<% if (musica === 'mscaqui') { %>
+                    <%= mscpadrao %>
+                    <% } else if (!musica) { %>
+                    <%= mscpadrao %>
+                    <% } else { %>
+                    <%= musica %>
+                    <% } %>"></audio>
+</head>
+<body id="page-top" onload="getvisitor();">
+
+    
+<section class="smart-scroll">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand heading-black" href="/">
+                LAURA - API
+            </a>
+            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span data-feather="grid"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/valores">
+                            <i class="fas fa-tags"></i><em width="18" height="18" class="mr-2"></em>
+                            Valores
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/info">
+                            <i class="fas fa-sync-alt"></i><em width="18" height="18" class="mr-2"></em>
+                            Informações
+                        </a>
+                    </li>
+                    
+                           <li class="nav-item">
+                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/admin">
+                                <i class="fas fa-code"></i><em class="mr-2"></em>
+                                Administração
+                            </a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/msgbot">
+                                <i class="fas fa-code"></i><em class="mr-2"></em>
+                                Administração 2
+                            </a>
+                        </li>
+                                            <li class="nav-item">
+                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/perfil">
+                            <i class="mdi mdi-account-edit"></i><em width="18" height="18" class="mr-2"></em>
+                            Perfil
+                        </a>
+                    </li>
+                                              <li class="nav-item">
+                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/lojinha">
+                                <i class="mdi mdi-store-check"></i><em class="mr-2"></em>
+                              Lojinha
+                            </a>
+                        </li>
+<li class="nav-item">
+                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/resgatar">
+                            <i class="mdi mdi-gift"></i><em width="18" height="18" class="mr-2"></em>
+                          Gift Card
+                        </a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/i/logout">
+                                <i class="fas fa-sign-out-alt"></i><em class="mr-2"></em>
+                                Deslogar
+                            </a>
+                        </li>                                                                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    
+</section>
+
+               <nav>
+
+                      <div class="menu-btn">
+                        <i class="fas fa-bars"></i>
+
+                      </div>
+
+
+                      </div>
+
+                      <div class="side-bar">
+                        <div class="close-btn">
+                          <i class="mdi mdi-close-thick"></i>
+                        </div>
+                         <div class="txt">
+                           <br></br>
+                           <div class="center-image">
+         <a href="#" alt="pedrozz: criador">
+        <img class="round-image" src="https://telegra.ph/file/980cea6cb4f8e5a55a6ab.jpg" alt="by Pedrozz">
+        </a>
+        </div>
+        <center>
+  <i>LAURA - API</i>
+</center>
+                          </div>
+              <hr>
+
+                     <div class="menu">
+
+            <br>
+
+                <div class="item">
+            <a class="sub-btn"><i class='fa fa-download'></i>DOWLOADS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/api/dl/play?nome=pedrozz_Mods&apikey=<%= apikey %>">Play</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/play2?nome=pedrozzMods&apikey=<%= apikey %>">Play2</a>
+<a class="dropdown-item" target="_blank" href="/dow/playmp3-2?q=pedrozzMods&apikey=<%= apikey %>">Play3</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/playvd?nome=pedrozzMods&apikey=<%= apikey %>">Play vídeo</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/ytmp3?link=https://youtu.be/LRW5adGyUeM&apikey=<%= apikey %>">Ytmp3</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/ytmp4?link=https://youtu.be/LRW5adGyUeM&apikey=<%= apikey %>">Ytmp4</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/ytmp3v2?link=https://youtu.be/LRW5adGyUeM&apikey=<%= apikey %>">Ytmp3 v2</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/ytmp4v2?link=https://youtu.be/LRW5adGyUeM&apikey=<%= apikey %>">Ytmp4 v2</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/yt?link=https://youtu.be/LRW5adGyUeM&apikey=<%= apikey %>">YouTube mp4/mp4</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/tiktok?link=https://vm.tiktok.com/ZMRXoPvCv/&apikey=<%= apikey %>">TikTok</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/twitter?link=https://twitter.com/AniTrendz/status/1454825835836297228?s=20&t=qpUB5MMGiVdB0K9eCBwjlw&apikey=<%= apikey %>">Twitter</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/sound?link=https://m.soundcloud.com/raptrapbrasil/teto-mustang-preto&apikey=<%= apikey %>">SoundCloud</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/mediafire?link=SEULINK&apikey=<%= apikey %>">Mediafire</a>
+<a class="dropdown-item" target="_blank" href="/api/dl/igdl?link=https://www.instagram.com/reel/CpDHISzA99O/?igshid=MDM4ZDc5MmU=&apikey=<%= apikey %>">Instagram</a>
+            </div>
+            </div>
+ <br>                                    
+                   <div class="item">
+                     <a class="sub-btn"><i class='mdi mdi-pinwheel'></i>CANVAS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/api/canvas/welcome?nome=LAURA PRIVAT&nomegp=SEJA BEM VINDO LAURA&titulo=BEM%20VINDO&membros=666&cor=ffea00&tcor=ffea00&lcor=ffea00&perfil=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&fundo=https://telegra.ph/file/73ac4efbdaed8da68e87c.jpg&numero=666&apikey=<%= apikey %>">BemVindo</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/goodbye?nome=LAURA PRIVAT&nomegp=LAURA SAIU&titulo=ADEUS&membros=666&cor=ffea00&tcor=ffea00&lcor=ffea00&perfil=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&fundo=https://telegra.ph/file/73ac4efbdaed8da68e87c.jpg&numero=666&apikey=<%= apikey %>">Adeus</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/rank?nome=LAURA PRIVAT&perfil=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&fundo=https://telegra.ph/file/14c9a6ce9c4e3e43a8ee1.jpg&cor=deeppink&xp=5000&fullxp=2500&rank=20&level=50&contagem=999&apikey=<%= apikey %>">Rank</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/menu?nome=LAURA PRIVAT&perfil=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&fundo=https://telegra.ph/file/14c9a6ce9c4e3e43a8ee1.jpg&cor1=ffea00&cor2=ffea00&numero=123&titulo=MENU&apikey=<%= apikey %>">Menu</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/comunismo?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Comunismo</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/bolsonaro?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Bolsonaro</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/bnw?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Bnw</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/affect?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Afect</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/blur?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Blur</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/beautiful?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Beautiful</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/circle?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Circle</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/del?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Del</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/gay?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Lgbt</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/invert?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Invert</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/facepalm?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Facepalm</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/dither?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Dither</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/jail?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Jail</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/magik?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Magik</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/rip?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Rip</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/rotate?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Rotate</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/sepia?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Sepia</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/pixelate?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Pixalate</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/trash?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Trash</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/wasted?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Wasted</a>
+<a class="dropdown-item" target="_blank" href="/api/canvas/wanted?img=https://telegra.ph/file/f5cfe62425c50b412542b.jpg&apikey=<%= apikey %>">Wanted</a>
+                     </div>
+                     </div>
+<br>                                             
+                       <div class="item">
+                         <a class="sub-btn"><i class='mdi mdi-ghost'></i>STICKER<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/api/maker/ttp?texto=PEDROZZ MODS&cor=ffea00&apikey=<%= apikey %>">Ttp</a>
+<a class="dropdown-item" target="_blank" href="/api/maker/attp1?texto=LAURA PRIVAT%20%F0%9F%98%83&apikey=<%= apikey %>">Attp1</a>
+<a class="dropdown-item" target="_blank" href="/api/maker/attp2?texto=LAURA PRIVAT%20%F0%9F%98%83&apikey=<%= apikey %>">Attp2</a>
+<a class="dropdown-item" target="_blank" href="/api/maker/attp3?texto=LAURA PRIVAT%20%F0%9F%98%83&apikey=<%= apikey %>">Attp3</a>
+<a class="dropdown-item" target="_blank" href="/api/maker/attp4?texto=LAURA PRIVAT%20%F0%9F%98%83&apikey=<%= apikey %>">Attp4</a>
+<a class="dropdown-item" target="_blank" href="/api/maker/attp5?texto=LAURA PRIVAT%20%F0%9F%98%83&apikey=<%= apikey %>">Attp5</a>
+<a class="dropdown-item" target="_blank" href="/api/maker/attp6?texto=LAURA PRIVAT%20%F0%9F%98%83&apikey=<%= apikey %>">Attp6</a>
+<a class="dropdown-item" target="_blank" href="/api/maker/attp7?texto=LAURA PRIVAT%20%F0%9F%98%83&apikey=<%= apikey %>">Attp7</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_anime?apikey=<%= apikey %>">Figu - Anime</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_coreana?apikey=<%= apikey %>">Figu - Coreana</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_emoji?apikey=<%= apikey %>">Figu - Emoji</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_meme?apikey=<%= apikey %>">Figu - Meme</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_bebe?apikey=<%= apikey %>">Figu - Bebe</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_desenho?apikey=<%= apikey %>">Figu - Desenho</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_animais?apikey=<%= apikey %>">Figu - Animais</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_raiva?apikey=<%= apikey %>">Figu - Raiva</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_roblox?apikey=<%= apikey %>">Figu - Roblox</a>
+<a class="dropdown-item" target="_blank" href="/sticker/figu_aleatori?apikey=<%= apikey %>">Figu - Aleatorias</a>
+                         </div>
+                         </div>
+<br>                                                  
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-pickaxe'></i>FERRAMENTAS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/metadinha?apikey=<%= apikey %>">METADINHA</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/stilodetxt?nome=Laura Privat&apikey=<%= apikey %>">Letras Diferentes</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/telegraph?img=https://i.pinimg.com/564x/3a/3e/34/3a3e34ac3c79679876df091c4dffeac6.jpg&apikey=<%= apikey %>">Telegra.Ph</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/voz/faustao?texto=testando&apikey=<%= apikey %>">Faustão</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/voz/eminem?texto=testando&apikey=<%= apikey %>">Eminem</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/voz/ibere?texto=testando&apikey=<%= apikey %>">Ibere</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/voz/chapolin?texto=testando&apikey=<%= apikey %>">Chapolin</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/voz/patolino?texto=testando&apikey=<%= apikey %>">Patolino</a>
+<a class="dropdown-item" target="_blank" href="/api/ferramenta/voz/negobam?texto=testando&apikey=<%= apikey %>">Nego Bam</a>
+                         </div>
+                         </div>
+<br>                                                  
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-card-search-outline'></i>PESQUISA/+18<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/apkmodhack?nome=ff&apikey=<%= apikey %>">Apk Mod</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/gpwhatsapp?nome=anime&apikey=<%= apikey %>">Gp wa</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/nerding?nome=loli&apikey=<%= apikey %>">Nerding</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/uptodown?nome=ff&apikey=<%= apikey %>">Uptodown</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/dafontSearch?nome=block&apikey=<%= apikey %>">Dafont</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/papeldeparede?nome=nagatoro&apikey=<%= apikey %>">Wallpaper</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/ytsrc?nome=ponk&apikey=<%= apikey %>">Yt pesquisa</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/geturl?nome=ghostame&apikey=<%= apikey %>">Yt pesquisa url</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/topflix?nome=terror&apikey=<%= apikey %>">TopFlix</a>
+<a class="dropdown-item" target="_blank" href="/pesquisa/pinterest?text=cat&apikey=<%= apikey %>">Pinterest</a>
+<a class="dropdown-item" target="_blank" href="/pesquisa/pinterest_mp4?url=&apikey=<%= apikey %>">PinterestMp4</a>
+<a class="dropdown-item" target="_blank" href="/pesquisa/playstore?nome=pou&apikey=<%= apikey %>">Playstore</a>
+<a class="dropdown-item" target="_blank" href="/pesquisa/amazon?nome=celular&apikey=<%= apikey %>">Amazon</a>
+<a class="dropdown-item" target="_blank" href="/pesquisa/mercadopago?nome=celular&apikey=<%= apikey %>">MercadoPago</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/randomgp?apikey=<%= apikey %>">Randon gp</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/pensador?nome=rima&apikey=<%= apikey %>">Pensador</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/hentaistuber?nome=neko&apikey=<%= apikey %>">Hentai Tubes</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/assistirhentai?nome=neko&apikey=<%= apikey %>">Ass hentai</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/pornhubsrc?nome=orgasm&apikey=<%= apikey %>">PornHub</a>
+<a class="dropdown-item" target="_blank" href="/api/pesquisa/pornogratis?nome=orgasm&apikey=<%= apikey %>">Porno Grátis</a>
+<a class="dropdown-item" target="_blank" href="/tempo?city=sao%20paulo&apikey=<%= apikey %>">Api Tempo</a>
+                         </div>
+                         </div>                         
+<br>                                                  
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-star'></i>ESPECIAIS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/ia/gpt?text=oi20%gpt&apikey=<%= apikey %>">Gpt - Ia</a>
+<a class="dropdown-item" target="_blank" href="/pesquisa/screenshotweb?url=&apikey=<%= apikey %>">ScreenshotWeb</a>
+<a class="dropdown-item" target="_blank" href="/phlogo">Logo PornHub</a>
+<a class="dropdown-item" target="_blank" href="/upload">Upload</a>
+<a class="dropdown-item" target="_blank" href="/api/especial/getsource?site=https://github.com&apikey=<%= apikey %>">Get Html</a>
+                         </div>
+                         </div>                         
+<br>                                                  
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-pencil'></i>TextPro<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/api/textpro/natura?nome=Pedrozz Mods&apikey=<%= apikey %>">Natural</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/blackpink?nome=Pedrozz Mods&apikey=<%= apikey %>">BlackPink</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/blackpink2?nome=Pedrozz Mods&apikey=<%= apikey %>">BlackPink2</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/business?nome=Pedrozz Mods&apikey=<%= apikey %>">Business</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/diamond?nome=Pedrozz Mods&apikey=<%= apikey %>">Diamond</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/summer?nome=Pedrozz Mods&apikey=<%= apikey %>">Summer</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/golden?nome=Pedrozz Mods&apikey=<%= apikey %>">Golden</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/carved?nome=Pedrozz Mods&apikey=<%= apikey %>">Carved</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/stone?nome=Pedrozz Mods&apikey=<%= apikey %>">Stone</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/glass?nome=Pedrozz Mods&apikey=<%= apikey %>">Glass</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/luxury?nome=Pedrozz Mods&apikey=<%= apikey %>">Luxury</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/whitegold?nome=Pedrozz Mods&apikey=<%= apikey %>">Whitegold</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/giraffe?nome=Pedrozz Mods&apikey=<%= apikey %>">Giraffe</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/sliced?nome=Pedrozz Mods&apikey=<%= apikey %>">Sliced</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/arcane?nome=Pedrozz Mods&apikey=<%= apikey %>">Arcane</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/batman?nome=Pedrozz Mods&apikey=<%= apikey %>">Batman</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/neonglitch?nome=Pedrozz Mods&apikey=<%= apikey %>">Neonglitch</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/ancient?nome=Pedrozz Mods&apikey=<%= apikey %>">Ancient</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/colorled?nome=Pedrozz Mods&apikey=<%= apikey %>">Color Led</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/neonheart?nome=Pedrozz Mods&apikey=<%= apikey %>">Neon Heart</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/newyear?nome=Pedrozz Mods&apikey=<%= apikey %>">New Year</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/candy?nome=Pedrozz Mods&apikey=<%= apikey %>">Candy</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/crhstimas?nome=Pedrozz Mods&apikey=<%= apikey %>">Crhstimas</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/3dchristmas?nome=Pedrozz Mods&apikey=<%= apikey %>">3dcristimas</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/depsea?nome=Pedrozz Mods&apikey=<%= apikey %>">DepSea</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/greeneon?nome=Pedrozz Mods&apikey=<%= apikey %>">Green Neon</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/break?nome=Pedrozz Mods&apikey=<%= apikey %>">Break</a>
+<a class="dropdown-item" target="_blank" href="/api/textpro/pornhub?nome=Pedrozz Mods&nome2=.&apikey=<%= apikey %>">PornHub</a>
+
+                         </div>
+                         </div>                         
+<br>                         
+  <div class="item">
+<a class="sub-btn"><i class='mdi mdi-pencil'></i>EPHOTO<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="dropdown-item" target="_blank" href="/api/ephoto/pubgv?nome=Pedrozz Mods&apikey=<%= apikey %>">Pubg Mp4</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/anonovo?nome=Pedrozz Mods&apikey=<%= apikey %>">Ano Novo</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/tigrev?nome=Pedrozz Mods&apikey=<%= apikey %>">Tigre Mp4</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/areia?nome=Pedrozz Mods&apikey=<%= apikey %>">Areia</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/blackpinkepo?nome=Pedrozz Mods&apikey=<%= apikey %>">BackPink</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/balckpingv2?nome=Pedrozz Mods&apikey=<%= apikey %>">BlackPink2</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/tela?nome=Pedrozz Mods&apikey=<%= apikey %>">Tela</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/brotoluz?nome=Pedrozz Mods&apikey=<%= apikey %>">Brotoluz</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/borracha?nome=Pedrozz Mods&apikey=<%= apikey %>">Borracha</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/brilhante?nome=Pedrozz Mods&apikey=<%= apikey %>">Brilhante</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/papel?nome=Pedrozz Mods&apikey=<%= apikey %>">Papel</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/diabo?nome=Pedrozz Mods&apikey=<%= apikey %>">Diabo</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/urso?nome=Pedrozz Mods&apikey=<%= apikey %>">Urso</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/blur?nome=Pedrozz Mods&apikey=<%= apikey %>">Blur</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/crack?nome=Pedrozz Mods&apikey=<%= apikey %>">Crack</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/vietnam?nome=Pedrozz Mods&apikey=<%= apikey %>">Vietnam</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/goldt?nome=Pedrozz Mods&apikey=<%= apikey %>">Goldit</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/grafit4?nome=Pedrozz Mods&apikey=<%= apikey %>">Grafit 4</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/biscoito?nome=Pedrozz Mods&apikey=<%= apikey %>">Biscoito/Bolacha kk</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/pig?nome=Pedrozz Mods&apikey=<%= apikey %>">Pig</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/seta?nome=Pedrozz Mods&apikey=<%= apikey %>">Seta</a>
+<a class="dropdown-item" target="_blank" href="/api/ephoto/grafite?nome=Pedrozz Mods&nome2=.&apikey=<%= apikey %>">Grafite</a>
+                         </div>
+                         </div>                       
+                        <hr>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+
+            <div class="item">
+              <a class="sub-btn"><i class='mdi mdi-shield-crown'></i><i class="sup">SUPORTE</i><i class="fas fa-angle-right dropdown"></i></a>
+            <div class="sub-menu">
+            <a class="mdi mdi-shield-crown" href="http://wa.me/556199317165">Pedrozz - Mods</a>
+            </div>
+            </div>
+                        <br></br><br>
+
+                      </div>
+                      </div>
+                      </div>
+
+
+            </div>
+            </div>
+
+                  </nav>
+<section class="py-5"></section>
+<br></br>
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                            <div class="icon-big text-center text-primary">
+                            <i class="far fa-user fa-3x"></i>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <p class="card-title text-primary">Pessoas Registradas</p>
+                                <p class="card-text"><%= totalrg %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                           <div class="icon-big text-center text-primary">
+                                    <i class="fas fa-clock fa-3x"></i>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <p class="card-title text-primary">requests | dia</p>
+                                <p class="card-text"><%= today %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                  <div class="icon-big text-center text-primary">
+                                    <i class="fas fa-hourglass-start fa-3x"></i>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <p class="card-title text-primary">requests | totais</p>
+                                <p class="card-text"><%= total %></p>
+         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-dark" >
+    <div class="container">
+        <center>            
+            
+								<%- include('./layouts/msg')  %>
+								<%- include('./layouts/errors')  %>
+ 
+             
+        </center>
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2 class="text-white heading-black text-primary">Ínicio</h2>
+                <p class="text-light lead mb-5" style="font-style: italic;">Bem Vindo <% if (admin === 'sim') { %>
+                <strong><span class="title-word title-word-1"><%= nome_usuario %></span></strong>  <img src="img/verificado-coder.gif" alt="verificado" height="20" width="20">
+                <% } else if (premium !== null) { %>
+                <%= nome_usuario %>  <img src="img/marca-de-verificacao.gif" alt="verificado" height="20" width="20">
+                <% } else { %>
+                <%= nome_usuario %>
+                <% } %></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#" class="text-center">          
+<div class="center-image">
+<a href="#" alt="pedrozz: criador">
+<img class="round-image" src="<% if (perfil === 'imgaqui') { %>
+                    <%= imgpadrao %>
+                    <% } else if (!perfil) { %>
+                    <%= imgpadrao %>
+                    <% } else { %>
+                    <%= perfil %>
+                    <% } %>" alt="by Pedrozz">
+        </a>
+        </div>
+                    <div class="card-body">
+                        <a href="#" class="card-title text-center"><h5><% if (admin === 'sim') { %>
+                <strong><span class="title-word title-word-1"><%= nome_usuario %></span></strong>  <img src="img/verificado-coder.gif" alt="verificado" height="20" width="20">
+                <% } else if (premium !== null) { %>
+                <%= nome_usuario %>  <img src="img/marca-de-verificacao.gif" alt="verificado" height="20" width="20">
+                <% } else { %>
+                <%= nome_usuario %>
+                <% } %></h5></a>
+                        <p class="text-muted small-xl text-center mb-2">Status : <% if (premium !== null) { %>
+                         Usuário Premium
+                       <% } else { %>
+                      Usuário Grátis
+                     <% } %></p>
+                        <p class="card-text">Apikey :
+                            <strong><code class="text-primary"><%= apikey %></code></strong>
+                        </p>
+                        <p class="card-text">Limit Diário : <%= abreviar(limit) %></p>
+                        <font color="orange"><font size="1">@Pedrozz_Mods</font size="1"></font color="orange">                            
+                        <p class="card-text">Total Requests : <%= abreviar(totalreq) %> </p>
+                        
+                        <div class="text-center"> 
+                            <form action="/admin/custom" method="post">
+                                <div class="form-group">
+                                    <input style="font-family:Arial, FontAwesome" name="customKey" type="text" class="form-control" placeholder="&#xf084;   Nova Apikey" required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-key"></i><em class="ml-2"></em>Mudar ApiKey</button>
+                                  <p class="text-muted small-xl">este recurso so esta liberado para usuários premium</p>               
+                                </div>
+                            </form>
+                            
+             
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+ <section class="py-5 bg-dark" >
+    <div class="container">
+        <center>            
+            
+
+ 
+             
+        </center>
+
+</section>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-code"></i>
+                            <em class="ml-2"></em>Pack de Case</h5>
+                            <p class="card-text">Pack de case da api </p>
+                            <div class="text-center">
+                                <a class="btn btn-primary mb-2" href="https://mega.nz/file/4HtjSKza#fUpEqjAOHU7vuD8LXGXn8ty68PU5emz0isM3njwPSjI" target="_blank"><i class="fas fa-link"></i><em class="ml-2"></em>Pack de Case</a>
+                            </div>
+                        <h5 class="card-title"><i class="fas fa-id-card"></i>
+                            <em class="ml-2"></em>Meu Contato</h5>
+                            <p class="card-text">Fale Comigo via</p>
+                            <div class="text-center">
+                                <a class="btn btn-primary mb-2" href="https://api.whatsapp.com/send/?phone=556199317165&text&app_absent=0" target="_blank">
+                                    <i class="fab fa-whatsapp"></i><em class="ml-2"></em>WhatsApp</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-4">
+<div class="container">
+<div class="row">
+<div class="col-md-6 mx-auto text-center">
+<h2 class="text-white heading-black text-primary">ranking</h2>
+<p class="text-light lead mb-5" style="font-style: italic;">rank dos ativos</p>
+</div>
+</div>    
+<div class="row justify-content-center" style="font-size: 14px;">
+<div class="col-12">
+<div class="card">
+<div class="card-body pt-2 text-center">
+<div style="overflow-x:auto !important;">
+<table class="table mb-0" style="width: 100% !important;">
+<thead class="text-primary">
+<tr>
+<th scope="col">PERFIL</th>
+<th scope="col">NOME</th>
+<th scope="col">TOTAL REQ</th>
+<th scope="col">DINHEIRO</th>       
+<th scope="col">NIVEL</th>             
+<th scope="col">EXP</th>                                                                                                
+</tr>
+</thead>
+<tbody>
+<% for (var i = 0; i < Lista.length; i++) { %>
+<tr>
+<td><img src="<% if (Lista[i].perfil === 'imgaqui') { %>
+<%= imgpadrao %>
+<% } else if (!Lista[i].perfil) { %>
+<%= imgpadrao %>
+<% } else { %>
+<%= Lista[i].perfil %>
+<% } %>" alt="" height="30" width="30"></td>
+<td><% if (Lista[i].admin === 'sim') { %>
+<h6 class="text-primary"><%= Lista[i].nome_usuario %> <i class="fas fa-code"></i></h6>
+<% } else if (Lista[i].premium !== null) { %>
+<%= Lista[i].nome_usuario %> <i class="fas fa-check fa-sm"></i>
+<% } else { %>
+<%= Lista[i].nome_usuario %>
+<% } %></td>
+<td><%= Lista[i].totalreq %></td>               
+<td><%= Lista[i].dinheiro %></td>             
+<td><%= Lista[i].nivel %></td>                 
+<td><%= Lista[i].exp %></td>
+</tr>
+<tr>
+<% } %>                 
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-2">
+    <div class="col-12 text-muted text-center">
+        <a href="https://wa.me/556199317165" target="_blank">2024 Pedrozz_Mods - Todos os direitos reservados</a>
+    </div>
+</section>
+
+<div class="scroll-top">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/playeaudio.js"></script>
+<script src="/js/dianoite.js"></script>
+
+         <script>
+           window.onload = function() {
+               setTimeout(function() {
+                   document.querySelector('.preloader').style.display = 'none';
+               }, 3000); 
+
+               setTimeout(initAOS, 3500);
+
+               setTimeout(showSwalAlert, 5000);
+
+               setInterval(function() {
+                   document.getElementById('slide' + contador).checked = true;
+                   contador++;
+                   if (contador > 5) {
+                       contador = 1;
+                   }
+               }, 3000);
+           };
+
+           function initAOS() {
+               AOS.init();
+           }
+
+           function showSwalAlert() {
+             Swal.fire({
+               title: 'Olá <%= nome_usuario %>!',
+               html: `
+               <br><br>
+<div class="center-image">
+<a href="#" class="text-center">
+<img src="https://telegra.ph/file/980cea6cb4f8e5a55a6ab.jpg">
+</a>
+</div>
+<br>
+Ola! Seja Bem Vindo a Laura - api❤! <a href='LINK'>Pedrozz Mods</a>&nbsp;</p>
+<br>
+`,
+showClass: {
+popup: 'animate_animated animate_fadeInDown'
+},
+hideClass: {
+popup: 'animate_animated animate_fadeOutUp'
+}
+});
+}
+$(document).ready(function(){
+  $('.menu-btn, .close-btn').click(function(){
+    $('.side-bar').toggleClass('active');
+  });
+});
+
+                   $('.sub-btn').click(function(){
+                     $(this).next('.sub-menu').slideToggle();
+                     $(this).find('.dropdown').toggleClass('rotate');
+                   });
+
+
+         let contador = 1;
+
+         setInterval( function(){
+             document.getElementById('slide' + contador).checked = true;
+             contador++;
+
+             if (contador > 5) {
+           contador = 1;
+         }
+         }, 3000 );
+
+         document.addEventListener('DOMContentLoaded', (event) => {
+             showWelcomeBox();
+         });
+
+         function closeWelcomeBox() {
+
+             document.querySelector('.welcome-container').style.display = 'none';
+               }
+
+         function showWelcomeBox() {
+
+             document.getElementById('welcomeBox').style.display = 'block';
+         }
+
+         function closeWelcomeBox() {
+             document.getElementById('welcomeBox').style.display = 'none';
+         }
+
+
+                       </script>
+
+           <script>
+             document.getElementById('imagem').addEventListener('click', function() {
+               window.location.href = 'perfil.html';
+             });
+               </script>
+               
+</body>
+</html>

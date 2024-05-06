@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>laura-API</title>
+    <meta name="description"content="uma api rest 100% profissional e confiável para os seus negócios, aqui você encontrará diversas apis de diferentes conteúdos."/>
+    <link rel="icon" href="https://telegra.ph/file/980cea6cb4f8e5a55a6ab.jpg" type="image/x-icon">
+
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/cssaudio.css" />
+    <link rel="stylesheet" href="/css/pink.css" id="theme-color">
+</head>
+<audio autoplay="autoplay" hidden="hidden" src="<% if (musica === 'mscaqui') { %>
+                    <%= mscpadrao %>
+                    <% } else if (!musica) { %>
+                    <%= mscpadrao %>
+                    <% } else { %>
+                    <%= musica %>
+                    <% } %>"></audio>
+<body id="page-top" onload="getvisitor();">
+
+    
+<section class="smart-scroll">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand heading-black" href="/">
+                LAURA - API
+            </a>
+            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span data-feather="grid"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/info">
+                            <i class="fas fa-sync-alt"></i><em width="18" height="18" class="mr-2"></em>
+                            Informações
+                        </a>
+                    </li>
+                    
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/i/logout">
+                                <i class="fas fa-sign-out-alt"></i><em class="mr-2"></em>
+                                Deslogar
+                            </a>
+                        </li>                                                                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<section class="py-5"></section>
+
+<section class="py-5">
+    <div class="container">
+            <center>            
+            
+								<%- include('./layouts/msg')  %>
+								<%- include('./layouts/errors')  %>
+ 
+             
+        </center>
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2 class="text-white heading-black text-primary">perfil</h2>
+                <p class="text-light lead mb-5" style="font-style: italic;">Bem Vindo <% if (admin === 'sim') { %>
+                <strong><span class="title-word title-word-1"><%= nome_usuario %></span></strong>  <img src="img/verificado-coder.gif" alt="verificado" height="20" width="20">
+                <% } else if (premium !== null) { %>
+                <%= nome_usuario %>  <img src="img/marca-de-verificacao.gif" alt="verificado" height="20" width="20">
+                <% } else { %>
+                <%= nome_usuario %>
+                <% } %></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#" class="text-center">                                                            
+                    <img class="card-img-top img-raised" style="width: 170px;height: 150px;border-radius: 50%;margin: -30px auto 0;" src="<% if (perfil === 'imgaqui') { %>
+                    <%= imgpadrao %>
+                    <% } else if (!perfil) { %>
+                    <%= imgpadrao %>
+                    <% } else { %>
+                    <%= perfil %>
+                    <% } %>" alt="Blog 1">
+                    </a>
+              
+	            <div> 
+                    <div class="card-body">
+                        <a href="#" class="card-title text-center"><h5><% if (admin === 'sim') { %>
+                <strong><span class="title-word title-word-1"><%= nome_usuario %></span></strong>  <img src="img/verificado-coder.gif" alt="verificado" height="20" width="20">
+                <% } else if (premium !== null) { %>
+                <%= nome_usuario %>  <img src="img/marca-de-verificacao.gif" alt="verificado" height="20" width="20">
+                <% } else { %>
+                <%= nome_usuario %>
+                <% } %></h5></a>
+                        <p class="text-muted small-xl text-center mb-2">Status : <% if (premium !== null) { %>
+                         Usuário Premium
+                       <% } else { %>
+                      Usuário Grátis
+                     <% } %></p>
+                        <p class="card-text">Apikey :
+                            <strong><code class="text-primary"><%= apikey %></code></strong>
+                        </p>
+                        <p class="card-text">Limit Diário : <%= abreviar(limit) %></p>
+                        <p class="card-text">Total Requests : <%= abreviar(totalreq) %> </p>
+                        <p class="card-text">Dinheiro : <%= abreviar(dinheiro) %> </p>
+                        <p class="card-text">Nivel : <%= nivel %> </p>
+                        <p class="card-text">Exp : <%= abreviar(exp) %> / <%= abreviar(reqXp) %> </p>
+                        <% if (premium !== null) { %>
+                        <p class="card-text">Premium Expira em : <%= expired %> </p>           
+                        <% } else { %>
+                       <% } %>
+                        <center><button class="btn btn-primary mb-2" data-clipboard-text="https://tohka.tech/perfil/<%= nome_usuario %>"><i class="fas fa-copy"></i><em class="ml-2"></em>compartilhar perfil</button></center>
+                        <div class="text-center"> 
+                         <h5>MUDAR NOME DE USUÁRIO</h5>
+                            <form action="/perfil" method="post">
+                                <div class="form-group">
+                                    <input style="font-family:Arial, FontAwesome" name="username" type="text" pattern="^[a-zA-Z0-9]+$" class="form-control" placeholder="&#xf007;   Novo Nome" required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-user"></i><em class="ml-2"></em>Mudar Nome</button>
+                                  <p class="text-muted small-xl">mude para um nome que você não esqueça quando for entrar na sua conta</p>               
+                                </div>
+                            </form>            
+                        <div class="text-center"> 
+                        <h5>MUDAR FOTO DE PERFIL</h5>
+                            <form action="/admin/setperfil" method="post">
+                                <div class="form-group">
+                                    <input style="font-family:Arial, FontAwesome" name="img" type="text" class="form-control" placeholder="&#xf03e;   https://telegra.ph/file/4637101da58e21976363b.jpg" required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary mb-2"><i class="far fa-images"></i><em class="ml-2"></em>Mudar Foto</button>
+                                  <p class="text-muted small-xl">coloque o link de uma foto válida para não ficar bugado, não coloque em formato de mp4, em formato de gif pode!</p>               
+                                </div>
+                            </form>                   
+                            <div class="text-center"> 
+                        <h5>MUDAR MÚSICA</h5>
+                            <form action="/admin/setmusica" method="post">
+                                <div class="form-group">
+                                    <input style="font-family:Arial, FontAwesome" name="music" type="text" class="form-control" placeholder="&#xf001;   exemplo " required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-volume-up"></i><em class="ml-2"></em>Mudar Música</button>
+                                  <p class="text-muted small-xl">coloque o link de um mp3 válido para não ficar bugado !</p>               
+                                </div>
+                            </form>                                                                                                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2 class="text-white heading-black text-primary">mochila</h2>
+                <p class="text-light lead mb-5" style="font-style: italic;">seus recursos</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Nome : <% if (admin === 'sim') { %>
+                <strong><span class="title-word title-word-1"><%= nome_usuario %></span></strong>  <img src="img/verificado-coder.gif" alt="verificado" height="20" width="20">
+                <% } else if (premium !== null) { %>
+                <%= nome_usuario %>  <img src="img/marca-de-verificacao.gif" alt="verificado" height="20" width="20">
+                <% } else { %>
+                <%= nome_usuario %>
+                <% } %></h4>
+                        <p class="card-text"><i class="fas fa-gift"></i> bronze :
+                        <code><font color="bronze"><%= bronze %></font color="cyan"></code>
+                        </p>
+                            <p class="card-text"><i class="fas fa-gift"></i> prata :
+                        <code><font color="grey"><%= prata %></font color="cinza"></code>
+                        </p> 
+                        <p class="card-text"><i class="fas fa-gift"></i> ouro :
+                        <code><font color="gold"><%= ouro %></font color="gold"></code>
+                        </p>
+                        <p class="card-text"><i class="fas fa-gift"></i> diamante :
+                        <code><font color="cyan"><%= diamante %></font color="cyan"></code>
+                        </p>                                       
+                    </div>
+                </div>
+            </div>
+
+<section class="py-2">
+    <div class="col-12 text-muted text-center">
+        <a href="https://wa.me/556199317165" target="_blank">2024 Pedrozz - Mods - Todos os direitos reservados</a>
+    </div>
+</section>
+
+<div class="scroll-top">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/playeaudio.js"></script>
+</body>
+</html>
